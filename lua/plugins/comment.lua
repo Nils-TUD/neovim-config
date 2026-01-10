@@ -1,3 +1,5 @@
-return {
-    'numToStr/Comment.nvim',
-}
+return function(proj)
+    return {
+        'numToStr/Comment.nvim',
+    }
+end

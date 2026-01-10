@@ -6,7 +6,6 @@
 require('config.debug')
 require('config.options')
 require('config.keymaps')
-require('config.lazy')
 
 -- project local settings
 local proj_local_str = vim.secure.read('.nvim.lua')
@@ -18,6 +17,8 @@ local proj_local = {
 if proj_local_str then
     proj_local = loadstring(proj_local_str)()
 end
+
+require('config.lazy')(proj_local)
 
 local default_lsps = {
     pylsp = true,
