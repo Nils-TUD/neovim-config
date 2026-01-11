@@ -33,7 +33,7 @@ return function(proj)
                         { '<C-space>', vim.lsp.buf.hover, desc = 'Show documentation' },
                         { '<C-r>', '<cmd>Telescope lsp_document_symbols<cr>', desc = 'LSP Document Symbols' },
                         { '<C-x>', '<cmd>Telescope lsp_dynamic_workspace_symbols<cr>', desc = 'LSP Workspace Symbols' },
-                        { '<leader>s', '<cmd>Telescope diagnostics<cr>', desc = 'Workspace Diagnostics' },
+                        { '<leader>w', '<cmd>Telescope diagnostics<cr>', desc = 'Workspace Diagnostics' },
                     }, r_opts)
                 end,
             })
