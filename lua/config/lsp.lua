@@ -9,13 +9,14 @@ return function(proj)
     -- start lsp clients according to project settings
     if proj.lsp then
         for k, v in pairs(proj.lsp) do
-            -- rust is already handled by rust-tools
-            if k ~= 'rust-analyzer' then
-                if v then
-                    vim.lsp.config(k, v)
-                else
-                    default_lsps[k] = false
-                end
+            if v then
+                vim.lsp.config(k, {
+                    settings = {
+                        [k] = v
+                    }
+                })
+            else
+                default_lsps[k] = false
             end
         end
     end
