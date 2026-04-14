@@ -84,6 +84,7 @@ return function(proj)
                 { '<C-g>', '<cmd>Telescope live_grep<cr>', desc = 'Live Grep' },
                 { '<C-b>', '<cmd>Telescope buffers<cr>', desc = 'Buffers' },
                 { '<C-r>', '<cmd>Telescope treesitter<cr>', desc = 'Treesitter' },
+                { '<C-t>', '<cmd>Telescope resume<cr>', desc = 'Resume Last Search' },
             })
         end,
     }
