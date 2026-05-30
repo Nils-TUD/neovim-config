@@ -79,12 +79,19 @@ return function(proj)
                 }
             })
 
+            local function grep_word_at_cursor()
+                require('telescope.builtin').live_grep({
+                    default_text = vim.fn.expand('<cword>')
+                })
+            end
+
             require('which-key').add({
                 { '<C-f>', '<cmd>Telescope find_files<cr>', desc = 'Find File' },
                 { '<C-g>', '<cmd>Telescope live_grep<cr>', desc = 'Live Grep' },
                 { '<C-b>', '<cmd>Telescope buffers<cr>', desc = 'Buffers' },
                 { '<C-r>', '<cmd>Telescope treesitter<cr>', desc = 'Treesitter' },
                 { '<C-t>', '<cmd>Telescope resume<cr>', desc = 'Resume Last Search' },
+                { '<leader>l', grep_word_at_cursor, desc = 'Live Grep of <cword>' },
             })
         end,
     }
